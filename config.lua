@@ -35,14 +35,20 @@ lvim.plugins = {
     "folke/tokyonight.nvim"
   },
   {
-    "navarasu/onedark.nvim"
+    "navarasu/onedark.nvim",
+    config = function()
+      require("onedark").setup {
+        style = 'darker',
+      }
+    end
   }
 }
 
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "onedark"
+lvim.transparent_window = false
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -102,6 +108,7 @@ lvim.builtin.which_key.mappings = {
     name = "Highlights",
     l = { "<cmd>nohlsearch<CR>", "Clear Highlight" }
   },
+
   b = {
     name = "Buffers",
     j = { "<cmd>BufferLinePick<cr>", "Jump" },
@@ -118,6 +125,7 @@ lvim.builtin.which_key.mappings = {
       "<cmd>BufferLineCloseRight<cr>",
       "Close all to the right",
     },
+    d = { "<cmd>bw<cr>", "Close current buffer" },
     D = {
       "<cmd>BufferLineSortByDirectory<cr>",
       "Sort by directory",
@@ -174,10 +182,10 @@ lvim.builtin.which_key.mappings = {
     j = { "<C-w>j", "Move Down Windows" },
     k = { "<C-w>k", "Move Up Windows" },
     l = { "<C-w>l", "Move Right Windows" },
-    J = { "<cmd>resize -4<CR>", "Resize Windows Down" },
-    K = { "<cmd>resize +4<CR>", "Resize Windows Up" },
-    H = { "<cmd>vertical resize -4<CR>", "Resize Window Left" },
-    L = { "<cmd>vertical resize +4<CR>", "Resize Window Right" }
+    J = { "<cmd>resize -10<CR>", "Resize Windows Down" },
+    K = { "<cmd>resize +10<CR>", "Resize Windows Up" },
+    H = { "<cmd>vertical resize -10<CR>", "Resize Window Left" },
+    L = { "<cmd>vertical resize +10<CR>", "Resize Window Right" }
 
   },
   q = {
@@ -359,6 +367,7 @@ lvim.builtin.treesitter.ensure_installed = {
   "rust",
   "java",
   "yaml",
+  "go"
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
