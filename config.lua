@@ -14,7 +14,7 @@ lvim.plugins = {
     cmd = "Neogit",
     opt = true,
     config = function()
-      require("module.neogit")
+      require('neogit').setup {}
     end,
   },
   {
@@ -28,19 +28,21 @@ lvim.plugins = {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
     config = function()
-      require("trouble").setup {
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
-      }
+      require("trouble").setup {}
     end
+  },
+  {
+    "folke/tokyonight.nvim"
+  },
+  {
+    "navarasu/onedark.nvim"
   }
 }
 
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
+lvim.colorscheme = "tokyonight"
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -237,7 +239,7 @@ lvim.builtin.which_key.mappings = {
     },
     q = { vim.diagnostic.setloclist, "Quickfix" },
     r = { vim.lsp.buf.rename, "Rename" },
-    h = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
+    h = { "<cmd>vim.lsp.buf.hover<cr>", "Document Symbols" },
     S = {
       "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
       "Workspace Symbols",
@@ -322,8 +324,8 @@ lvim.builtin.which_key.mappings = {
     name = "Comment",
     [";"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" }
   },
-  e = {
-    name = "Errors",
+  t = {
+    name = "Trouble",
     r = { "<cmd>Trouble lsp_references<cr>", "References" },
     f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
     d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
