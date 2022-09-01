@@ -7,6 +7,7 @@ a global executable or a path to
 an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
+vim.o.guifont = "JetBrainsMono Nerd Font"
 vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
 lvim.plugins = {
@@ -66,6 +67,10 @@ lvim.plugins = {
     config = function()
       require('glow').setup({})
     end
+  },
+  {
+    "nanozuki/tabby.nvim",
+    config = function() require("tabby").setup() end,
   },
   {
     "simrat39/rust-tools.nvim",
@@ -161,40 +166,20 @@ lvim.builtin.which_key.mappings = {
 
   b = {
     name = "Buffers",
-    j = { "<cmd>BufferLinePick<cr>", "Jump" },
-    f = { "<cmd>Telescope buffers<cr>", "Find" },
-    b = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
-    n = { "<cmd>BufferLineCycleNext<cr>", "Next" },
-    -- w = { "<cmd>BufferWipeout<cr>", "Wipeout" }, -- TODO: implement this for bufferline
-    e = {
-      "<cmd>BufferLinePickClose<cr>",
-      "Pick which buffer to close",
-    },
-    h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
-    l = {
-      "<cmd>BufferLineCloseRight<cr>",
-      "Close all to the right",
-    },
-    d = { "<cmd>bw<cr>", "Close current buffer" },
-    D = {
-      "<cmd>BufferLineSortByDirectory<cr>",
-      "Sort by directory",
-    },
-    L = {
-      "<cmd>BufferLineSortByExtension<cr>",
-      "Sort by language",
-    },
+    b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+    n = { "<cmd>bn<cr>", "Next buffers" },
+    p = { "<cmd>bp<cr>", "Prev buffers" },
+    c = { "<cmd>bd<cr>", "Close buffers" },
   },
 
   ["<tab>"] = {
     name = "Workspace",
-    ["<tab>"] = { "<cmd>tabnew<CR>", "New Tab" },
-
-    n = { "<cmd>tabnext<CR>", "Next" },
+    n = { "<cmd>$tabnew<CR>", "New Tab" },
+    ["<tab>"] = { "<cmd>tabn<CR>", "Next" },
     d = { "<cmd>tabclose<CR>", "Close" },
-    p = { "<cmd>tabprevious<CR>", "Previous" },
-    f = { "<cmd>tabfirst<CR>", "First" },
-    l = { "<cmd>tablast<CR>", "Last" },
+    p = { "<cmd>tabp<CR>", "Previous" },
+    h = { "<cmd>-tabmove<CR>", "move tab to up" },
+    l = { "<cmd>+tabmove<CR>", "move tab to next" }
   },
 
   g = {
@@ -404,6 +389,7 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.treesitter.rainbow.enable = true
+lvim.builtin.bufferline.active = false
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
