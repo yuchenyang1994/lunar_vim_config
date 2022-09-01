@@ -38,15 +38,33 @@ lvim.plugins = {
   {
     "navarasu/onedark.nvim",
     config = function()
-      require("onedark").setup {
-        style = 'darker',
-      }
+      require("onedark").setup {}
     end
   },
   {
     'simrat39/symbols-outline.nvim',
     config = function()
-      require("symbols-outline").setup()
+      require("symbols-outline").setup({})
+    end
+  },
+  {
+    "p00f/nvim-ts-rainbow",
+  },
+  {
+    "nvim-telescope/telescope-project.nvim",
+    event = "BufWinEnter",
+    setup = function()
+      vim.cmd [[packadd telescope.nvim]]
+    end,
+    config = function()
+      require 'telescope'.load_extension('project')
+    end
+  },
+  {
+    "npxbr/glow.nvim",
+    ft = { "markdown" },
+    config = function()
+      require('glow').setup({})
     end
   },
   {
@@ -119,6 +137,9 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 --   l = { "<cmd>Trouble loclist<cr>", "LocationList" },
 --   w = { "<cmd>Trouble workspace_diagnostics<cr>", "Wordspace Diagnostics" },
 -- }
+
+
+
 
 lvim.builtin.which_key.vmappings = {
   [";"] = {
@@ -242,7 +263,7 @@ lvim.builtin.which_key.mappings = {
   },
   p = {
     name = "Project",
-    p = { "<cmd>Telescope projects<CR>", "Find Projects" },
+    p = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Find Projects" },
   },
   c = {
     name = "Code",
@@ -382,6 +403,7 @@ lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.treesitter.rainbow.enable = true
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
