@@ -7,6 +7,7 @@ a global executable or a path to
 an executable
 ]]
 -- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "rust_analyzer" })
 
 lvim.plugins = {
   {
@@ -41,6 +42,34 @@ lvim.plugins = {
         style = 'darker',
       }
     end
+  },
+  {
+    'simrat39/symbols-outline.nvim',
+    config = function()
+      require("symbols-outline").setup()
+    end
+  },
+  {
+    "simrat39/rust-tools.nvim",
+    config = function()
+      local lsp_installer_servers = require "nvim-lsp-installer.servers"
+      local _, requested_server = lsp_installer_servers.get_server "rust_analyzer"
+      require("rust-tools").setup({
+        tools = {
+          autoSetHints = true,
+          hover_with_actions = true,
+          runnables = {
+            use_telescope = true,
+          },
+        },
+        server = {
+          cmd_env = requested_server._default_options.cmd_env,
+          on_attach = require("lvim.lsp").common_on_attach,
+          on_init = require("lvim.lsp").common_on_init,
+        },
+      })
+    end,
+    ft = { "rust", "rs" },
   }
 }
 
@@ -257,6 +286,7 @@ lvim.builtin.which_key.mappings = {
   o = {
     name = "Open",
     e = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
+    l = { "<cmd>SymbolsOutline<CR>", "Outline" },
     t = {
       name = "Terminal",
       t = { "<cmd>ToggleTerm direction=horizontal<CR>", "Open Terminal(horizontal)" },
