@@ -69,10 +69,6 @@ lvim.plugins = {
     end
   },
   {
-    "nanozuki/tabby.nvim",
-    config = function() require("tabby").setup() end,
-  },
-  {
     "simrat39/rust-tools.nvim",
     config = function()
       local lsp_installer_servers = require "nvim-lsp-installer.servers"
@@ -389,7 +385,7 @@ lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.treesitter.rainbow.enable = true
-lvim.builtin.bufferline.active = false
+lvim.builtin.bufferline.options.mode = "tabs"
 
 -- if you don't want all the parsers change this to a table of the ones you want
 lvim.builtin.treesitter.ensure_installed = {
