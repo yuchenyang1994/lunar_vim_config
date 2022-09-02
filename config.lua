@@ -410,7 +410,8 @@ lvim.builtin.treesitter.ensure_installed = {
   "rust",
   "java",
   "yaml",
-  "go"
+  "go",
+  "markdown"
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
