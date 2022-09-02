@@ -69,6 +69,9 @@ lvim.plugins = {
     end
   },
   {
+    "EdenEast/nightfox.nvim"
+  },
+  {
     "simrat39/rust-tools.nvim",
     config = function()
       local lsp_installer_servers = require "nvim-lsp-installer.servers"
@@ -95,7 +98,7 @@ lvim.plugins = {
 -- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedark"
+lvim.colorscheme = "nordfox"
 lvim.transparent_window = false
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
@@ -170,12 +173,12 @@ lvim.builtin.which_key.mappings = {
 
   ["<tab>"] = {
     name = "Workspace",
-    n = { "<cmd>$tabnew<CR>", "New Tab" },
-    ["<tab>"] = { "<cmd>tabn<CR>", "Next" },
+    ["<tab>"] = { "<cmd>$tabnew<CR>", "Next" },
+    n = { "<cmd>tabn<CR>", "New Tab" },
     d = { "<cmd>tabclose<CR>", "Close" },
     p = { "<cmd>tabp<CR>", "Previous" },
-    h = { "<cmd>-tabmove<CR>", "move tab to up" },
-    l = { "<cmd>+tabmove<CR>", "move tab to next" }
+    H = { "<cmd>-tabmove<CR>", "move tab to up" },
+    L = { "<cmd>+tabmove<CR>", "move tab to next" },
   },
 
   g = {
