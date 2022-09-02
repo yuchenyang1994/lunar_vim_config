@@ -168,12 +168,12 @@ lvim.builtin.which_key.mappings = {
     b = { "<cmd>Telescope buffers<cr>", "Buffers" },
     n = { "<cmd>bn<cr>", "Next buffers" },
     p = { "<cmd>bp<cr>", "Prev buffers" },
-    c = { "<cmd>bd<cr>", "Close buffers" },
+    d = { "<cmd>bd<cr>", "Close buffers" },
   },
 
   ["<tab>"] = {
     name = "Workspace",
-    ["<tab>"] = { "<cmd>$tabnew<CR>", "Next" },
+    ["<tab>"] = { "<cmd>$tabnew<CR>", "New tabs" },
     n = { "<cmd>tabn<CR>", "New Tab" },
     d = { "<cmd>tabclose<CR>", "Close" },
     p = { "<cmd>tabp<CR>", "Previous" },
@@ -486,6 +486,15 @@ lvim.builtin.treesitter.highlight.enabled = true
 --     filetypes = { "javascript", "python" },
 --   },
 -- }
+
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  {
+    command = "prettier",
+    extra_args = { "--print-with", "100" },
+    filetypes = { "typescript", "markdown", "javascript", "typescriptreact", "javascriptreact", "json", "yaml" }
+  }
+}
 
 -- Additional Plugins
 -- lvim.plugins = {
