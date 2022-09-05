@@ -78,6 +78,21 @@ lvim.plugins = {
     "EdenEast/nightfox.nvim"
   },
   {
+    "tzachar/cmp-tabnine",
+    run = "./install.sh",
+    requires = "hrsh7th/nvim-cmp",
+    config = function()
+      local tabnine = require "cmp_tabnine.config"
+      tabnine:setup {
+        max_lines = 1000,
+        max_num_results = 10,
+        sort = true,
+      }
+    end,
+    opt = true,
+    event = "InsertEnter",
+  },
+  {
     "simrat39/rust-tools.nvim",
     config = function()
       local lsp_installer_servers = require "nvim-lsp-installer.servers"
