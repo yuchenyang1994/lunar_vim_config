@@ -20,6 +20,7 @@ lvim.plugins = {
         integrations = {
           diffview = true
         },
+
       }
     end,
   },
@@ -241,9 +242,14 @@ lvim.builtin.which_key.mappings = {
       "Checkout commit(for current file)",
     },
     d = {
-      "<cmd>Gitsigns diffthis HEAD<cr>",
+      "<cmd>DiffviewOpen<cr>",
       "Git Diff",
     },
+    h = {
+      name = "History",
+      b = { "<cmd>DiffviewFileHistory<cr>", "Current Branch" },
+      f = { "<cmd>DiffviewFileHistory %<cr>", "Current File" }
+    }
   },
   w = {
     name = "Window",
