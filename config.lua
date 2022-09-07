@@ -16,7 +16,11 @@ lvim.plugins = {
     cmd = "Neogit",
     opt = true,
     config = function()
-      require('neogit').setup {}
+      require('neogit').setup {
+        integrations = {
+          diffview = true
+        },
+      }
     end,
   },
   {
@@ -119,7 +123,14 @@ lvim.plugins = {
       })
     end,
     ft = { "rust", "rs" },
-  }
+  },
+  {
+    'sindrets/diffview.nvim',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function()
+      require("diffview").setup {}
+    end
+  },
 }
 
 -- general
