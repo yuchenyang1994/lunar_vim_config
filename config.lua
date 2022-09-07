@@ -93,6 +93,12 @@ lvim.plugins = {
     event = "InsertEnter",
   },
   {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
+  },
+  {
     "simrat39/rust-tools.nvim",
     config = function()
       local lsp_installer_servers = require "nvim-lsp-installer.servers"
