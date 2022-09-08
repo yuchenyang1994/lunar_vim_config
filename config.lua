@@ -165,6 +165,13 @@ lvim.plugins = {
       require("todo-comments").setup()
     end,
   },
+  {
+    "ray-x/go.nvim",
+    config = function()
+      require('go').setup()
+    end,
+    ft = { "go" }
+  }
 }
 
 -- general
