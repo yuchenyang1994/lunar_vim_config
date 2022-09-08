@@ -126,6 +126,13 @@ lvim.plugins = {
     ft = { "rust", "rs" },
   },
   {
+    "NTBBloodbath/rest.nvim",
+    requires = { "nvim-lua/plenary.nvim" },
+    config = function()
+      require("rest-nvim").setup {}
+    end
+  },
+  {
     'sindrets/diffview.nvim',
     requires = 'nvim-lua/plenary.nvim',
     config = function()
@@ -199,7 +206,8 @@ lvim.builtin.which_key.mappings = {
   },
   h = {
     name = "Highlights",
-    l = { "<cmd>nohlsearch<CR>", "Clear Highlight" }
+    s = { "<cmd>setlocal spell<cr>", "Spell" },
+    S = { "<cmd>setlocal nospell<cr>", "No Spell" }
   },
 
   b = {
@@ -288,6 +296,7 @@ lvim.builtin.which_key.mappings = {
       "<cmd>lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
       "Colorscheme with Preview",
     },
+    l = { "<cmd>nohlsearch<CR>", "Clear Highlight" }
   },
   p = {
     name = "Project",
@@ -449,7 +458,8 @@ lvim.builtin.treesitter.ensure_installed = {
   "java",
   "yaml",
   "go",
-  "markdown"
+  "markdown",
+  "http",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
