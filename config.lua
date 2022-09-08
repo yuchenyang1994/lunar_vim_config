@@ -135,9 +135,29 @@ lvim.plugins = {
   {
     'sindrets/diffview.nvim',
     requires = 'nvim-lua/plenary.nvim',
+    event = "BufRead",
     config = function()
       require("diffview").setup {}
     end
+  },
+  {
+    "norcalli/nvim-colorizer.lua",
+    config = function()
+      require("colorizer").setup({ "*" }, {
+        RGB = true, -- #RGB hex codes
+        RRGGBB = true, -- #RRGGBB hex codes
+        RRGGBBAA = true, -- #RRGGBBAA hex codes
+        rgb_fn = true, -- CSS rgb() and rgba() functions
+        hsl_fn = true, -- CSS hsl() and hsla() functions
+        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+      })
+    end,
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    config = function() require "lsp_signature".on_attach() end,
   },
 }
 
@@ -547,7 +567,7 @@ formatters.setup {
   {
     command = "prettier",
     extra_args = { "--print-with", "100" },
-    filetypes = { "typescript", "markdown", "javascript", "typescriptreact", "javascriptreact", "json", "yaml" }
+    filetypes = { "typescript", "markdown", "javascript", "typescriptreact", "javascriptreact", "json", "yaml", "http" }
   },
 }
 
