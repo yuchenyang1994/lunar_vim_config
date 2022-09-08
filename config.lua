@@ -135,7 +135,6 @@ lvim.plugins = {
   {
     'sindrets/diffview.nvim',
     requires = 'nvim-lua/plenary.nvim',
-    event = "BufRead",
     config = function()
       require("diffview").setup {}
     end
@@ -158,6 +157,13 @@ lvim.plugins = {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
     config = function() require "lsp_signature".on_attach() end,
+  },
+  {
+    "folke/todo-comments.nvim",
+    event = "BufRead",
+    config = function()
+      require("todo-comments").setup()
+    end,
   },
 }
 
