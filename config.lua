@@ -203,6 +203,17 @@ lvim.plugins = {
     config = function()
       require("scope").setup()
     end
+  },
+  {
+    'jedrzejboczar/toggletasks.nvim',
+    config = function()
+      require("toggletasks").setup({
+        search_paths = {
+          '.tasks',
+          '.nvim/toggletasks'
+        }
+      })
+    end
   }
 }
 
