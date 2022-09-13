@@ -171,7 +171,33 @@ lvim.plugins = {
       require('go').setup()
     end,
     ft = { "go" }
-  }
+  },
+  {
+    "kevinhwang91/nvim-bqf",
+    event = { "BufRead", "BufNew" },
+    config = function()
+      require("bqf").setup({
+        auto_enable = true,
+        preview = {
+          win_height = 12,
+          win_vheight = 12,
+          delay_syntax = 80,
+          border_chars = { "┃", "┃", "━", "━", "┏", "┓", "┗", "┛", "█" },
+        },
+        func_map = {
+          vsplit = "",
+          ptogglemode = "z,",
+          stoggleup = "",
+        },
+        filter = {
+          fzf = {
+            action_for = { ["ctrl-s"] = "split" },
+            extra_opts = { "--bind", "ctrl-o:toggle-all", "--prompt", "> " },
+          },
+        },
+      })
+    end,
+  },
 }
 
 -- general
@@ -301,10 +327,10 @@ lvim.builtin.which_key.mappings = {
     j = { "<C-w>j", "Move Down Windows" },
     k = { "<C-w>k", "Move Up Windows" },
     l = { "<C-w>l", "Move Right Windows" },
-    J = { "<cmd>resize -10<CR>", "Resize Windows Down" },
-    K = { "<cmd>resize +10<CR>", "Resize Windows Up" },
-    H = { "<cmd>vertical resize -10<CR>", "Resize Window Left" },
-    L = { "<cmd>vertical resize +10<CR>", "Resize Window Right" }
+    J = { "<cmd>resize -20<CR>", "Resize Windows Down" },
+    K = { "<cmd>resize +20<CR>", "Resize Windows Up" },
+    H = { "<cmd>vertical resize +20<CR>", "Resize Window Left" },
+    L = { "<cmd>vertical resize -20<CR>", "Resize Window Right" }
 
   },
   q = {
@@ -396,8 +422,7 @@ lvim.builtin.which_key.mappings = {
       "Find LunarVim files",
     },
     g = {
-      "<cmd>lua require('lvim.core.telescope.custom-finders').grep_lunarvim_files()<cr>",
-      "Grep LunarVim files",
+      "<cmd>lua require('lvim.core.telescope.custom-finders').grep_lunarvim_files()<cr>", "Grep LunarVim files",
     },
     k = { "<cmd>Telescope keymaps<cr>", "View LunarVim's keymappings" },
     i = {
