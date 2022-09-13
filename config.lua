@@ -277,10 +277,28 @@ lvim.builtin.which_key.mappings = {
 
   b = {
     name = "Buffers",
-    b = { "<cmd>Telescope buffers<cr>", "Buffers" },
-    n = { "<cmd>bn<cr>", "Next buffers" },
-    p = { "<cmd>bp<cr>", "Prev buffers" },
-    d = { "<cmd>bd<cr>", "Close buffers" },
+    j = { "<cmd>BufferLinePick<cr>", "Jump" },
+    f = { "<cmd>Telescope buffers<cr>", "Find" },
+    b = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
+    n = { "<cmd>BufferLineCycleNext<cr>", "Next" },
+    -- w = { "<cmd>BufferWipeout<cr>", "Wipeout" }, -- TODO: implement this for bufferline
+    e = {
+      "<cmd>BufferLinePickClose<cr>",
+      "Pick which buffer to close",
+    },
+    h = { "<cmd>BufferLineCloseLeft<cr>", "Close all to the left" },
+    l = {
+      "<cmd>BufferLineCloseRight<cr>",
+      "Close all to the right",
+    },
+    D = {
+      "<cmd>BufferLineSortByDirectory<cr>",
+      "Sort by directory",
+    },
+    L = {
+      "<cmd>BufferLineSortByExtension<cr>",
+      "Sort by language",
+    },
   },
 
   ["<tab>"] = {
@@ -289,8 +307,7 @@ lvim.builtin.which_key.mappings = {
     n = { "<cmd>tabn<CR>", "New Tab" },
     d = { "<cmd>tabclose<CR>", "Close" },
     p = { "<cmd>tabp<CR>", "Previous" },
-    H = { "<cmd>-tabmove<CR>", "move tab to up" },
-    L = { "<cmd>+tabmove<CR>", "move tab to next" },
+
   },
 
   g = {
