@@ -32,13 +32,6 @@ lvim.plugins = {
     end
   },
   {
-    "folke/trouble.nvim",
-    requires = "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("trouble").setup {}
-    end
-  },
-  {
     "folke/tokyonight.nvim"
   },
   {
@@ -528,16 +521,6 @@ lvim.builtin.which_key.mappings = {
     name = "Comment",
     [";"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" }
   },
-  t = {
-    name = "Trouble",
-    r = { "<cmd>Trouble lsp_references<cr>", "References" },
-    f = { "<cmd>Trouble lsp_definitions<cr>", "Definitions" },
-    d = { "<cmd>Trouble lsp_document_diagnostics<cr>", "Diagnosticss" },
-    q = { "<cmd>Trouble quickfix<cr>", "QuickFix" },
-    l = { "<cmd>Trouble loclist<cr>", "LocationList" },
-    w = { "<cmd>Trouble lsp_workspace_diagnostics<cr>", "Diagnosticss" },
-  }
-
 }
 
 -- TODO: User Config for predefined plugins
