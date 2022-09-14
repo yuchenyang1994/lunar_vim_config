@@ -108,6 +108,7 @@ lvim.plugins = {
     config = function()
       require("rust-tools").setup {
         tools = {
+          executor = require("rust-tools/executors").quickfix,
           reload_workspace_from_cargo_toml = true,
           autoSetHints = true,
           inlay_hints = {
@@ -218,6 +219,12 @@ lvim.plugins = {
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('yabs'):setup {}
+    end
+  },
+  {
+    'nvim-telescope/telescope-ui-select.nvim',
+    config = function()
+      require("telescope").load_extension("ui-select")
     end
   }
 }
