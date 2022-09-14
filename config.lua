@@ -204,6 +204,7 @@ lvim.plugins = {
         },
       })
     end,
+    ft = "qf"
   },
   {
     "tiagovla/scope.nvim",
