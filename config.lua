@@ -224,7 +224,10 @@ lvim.plugins = {
     config = function()
       require("telescope").load_extension("ui-select")
     end
-  }
+  },
+  {
+    "tpope/vim-surround",
+  },
 }
 
 -- general
