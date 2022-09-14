@@ -123,9 +123,6 @@ lvim.plugins = {
             right_align_padding = 7,
             highlight = "Comment",
           },
-          runnables = {
-            use_telescope = true,
-          },
         },
         server = {
           on_init = require("lvim.lsp").common_on_init,
