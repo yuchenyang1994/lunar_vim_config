@@ -301,6 +301,7 @@ lvim.builtin.which_key.mappings = {
     f = { "<cmd>Telescope buffers<cr>", "Find" },
     b = { "<cmd>BufferLineCyclePrev<cr>", "Previous" },
     n = { "<cmd>BufferLineCycleNext<cr>", "Next" },
+    d = { "<cmd>BufferKill<cr>", "Kill" },
     -- w = { "<cmd>BufferWipeout<cr>", "Wipeout" }, -- TODO: implement this for bufferline
     e = {
       "<cmd>BufferLinePickClose<cr>",
