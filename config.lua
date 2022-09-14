@@ -205,14 +205,10 @@ lvim.plugins = {
     end
   },
   {
-    'jedrzejboczar/toggletasks.nvim',
+    'pianocomposer321/yabs.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
     config = function()
-      require("toggletasks").setup({
-        search_paths = {
-          '.tasks',
-          '.nvim/toggletasks'
-        }
-      })
+      require('yabs'):setup {}
     end
   }
 }
@@ -394,6 +390,8 @@ lvim.builtin.which_key.mappings = {
   p = {
     name = "Project",
     p = { "<cmd>lua require'telescope'.extensions.project.project{}<CR>", "Find Projects" },
+    t = { "<cmd>Telescope yabs tasks<CR>", "Tasks" },
+    T = { "<cmd>Telescope yabs current_language_tasks<CR>", "Current Tasks" }
   },
   c = {
     name = "Code",
