@@ -156,7 +156,7 @@ lvim.plugins = {
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
-    config = function() require "lsp_signature".on_attach() end,
+    config = function() require "lsp_signature".setup() end,
   },
   {
     "folke/todo-comments.nvim",
