@@ -67,12 +67,6 @@ lvim.plugins = {
     end
   },
   {
-    'lewis6991/spellsitter.nvim',
-    config = function()
-      require("spellsitter").setup {}
-    end
-  },
-  {
     "EdenEast/nightfox.nvim"
   },
   {
