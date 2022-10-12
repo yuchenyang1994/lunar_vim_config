@@ -308,7 +308,7 @@ lvim.builtin.which_key.mappings = {
   },
   h = {
     name = "Highlights",
-    s = { "<cmd>setlocal spell<cr>", "Spell" },
+    s = { "<cmd>setlocal spell spelllang=en_us,cjk<cr>", "Spell" },
     S = { "<cmd>setlocal nospell<cr>", "No Spell" }
   },
 
