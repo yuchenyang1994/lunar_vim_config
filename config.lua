@@ -522,7 +522,6 @@ lvim.builtin.which_key.mappings = {
       },
       P = { "<cmd>edit $LUNARVIM_CACHE_DIR/packer.nvim.log<cr>", "Open the Packer logfile" },
     },
-    n = { "<cmd>Telescope notify<cr>", "View Notifications" },
     r = { "<cmd>LvimReload<cr>", "Reload LunarVim's configuration" },
     u = { "<cmd>LvimUpdate<cr>", "Update LunarVim" },
   },
@@ -547,7 +546,6 @@ lvim.builtin.which_key.mappings = {
 -- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
