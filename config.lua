@@ -658,7 +658,6 @@ formatters.setup {
     filetypes = { "typescript", "markdown", "javascript", "typescriptreact", "javascriptreact", "json", "yaml", "http" }
   },
 }
-
 -- Additional Plugins
 -- lvim.plugins = {
 --     {"folke/tokyonight.nvim"},
