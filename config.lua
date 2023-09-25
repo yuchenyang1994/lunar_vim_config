@@ -14,7 +14,7 @@ lvim.plugins = {
   {
     "TimUntersberger/neogit",
     cmd = "Neogit",
-    opt = true,
+    lazy = true,
     config = function()
       require('neogit').setup {
         integrations = {
@@ -26,7 +26,7 @@ lvim.plugins = {
   },
   {
     'phaazon/hop.nvim',
-    as = 'hop',
+    name = 'hop',
     config = function()
       require('hop').setup()
     end
@@ -44,14 +44,8 @@ lvim.plugins = {
     end
   },
   {
-    "p00f/nvim-ts-rainbow",
-  },
-  {
     "nvim-telescope/telescope-project.nvim",
     event = "BufWinEnter",
-    setup = function()
-      vim.cmd [[packadd telescope.nvim]]
-    end,
     config = function()
       require 'telescope'.load_extension('project')
     end
@@ -68,8 +62,8 @@ lvim.plugins = {
   },
   {
     "tzachar/cmp-tabnine",
-    run = "./install.sh",
-    requires = "hrsh7th/nvim-cmp",
+    build = "./install.sh",
+    dependencies = "hrsh7th/nvim-cmp",
     config = function()
       local tabnine = require "cmp_tabnine.config"
       tabnine:setup {
@@ -78,7 +72,7 @@ lvim.plugins = {
         sort = true,
       }
     end,
-    opt = true,
+    lazy = true,
     event = "InsertEnter",
   },
   {
@@ -118,14 +112,14 @@ lvim.plugins = {
   },
   {
     "NTBBloodbath/rest.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       require("rest-nvim").setup {}
     end
   },
   {
     'sindrets/diffview.nvim',
-    requires = 'nvim-lua/plenary.nvim',
+    dependencies = 'nvim-lua/plenary.nvim',
     config = function()
       require("diffview").setup {}
     end
@@ -134,13 +128,13 @@ lvim.plugins = {
     "norcalli/nvim-colorizer.lua",
     config = function()
       require("colorizer").setup({ "*" }, {
-        RGB = true, -- #RGB hex codes
-        RRGGBB = true, -- #RRGGBB hex codes
+        RGB = true,      -- #RGB hex codes
+        RRGGBB = true,   -- #RRGGBB hex codes
         RRGGBBAA = true, -- #RRGGBBAA hex codes
-        rgb_fn = true, -- CSS rgb() and rgba() functions
-        hsl_fn = true, -- CSS hsl() and hsla() functions
-        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+        rgb_fn = true,   -- CSS rgb() and rgba() functions
+        hsl_fn = true,   -- CSS hsl() and hsla() functions
+        css = true,      -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true,   -- Enable all CSS *functions*: rgb_fn, hsl_fn
       })
     end,
   },
@@ -198,7 +192,7 @@ lvim.plugins = {
   },
   {
     'pianocomposer321/yabs.nvim',
-    requires = { 'nvim-lua/plenary.nvim' },
+    dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('yabs'):setup {}
     end
