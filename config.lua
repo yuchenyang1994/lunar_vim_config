@@ -364,7 +364,7 @@ lvim.builtin.which_key.mappings = {
   },
   q = {
     name = "Quit",
-    q = { "<cmd>lua require('lvim.utils.functions').smart_quit()<CR>", "Quit" },
+    q = { "<cmd>confirm q<CR>", "Quit" },
     Q = { "<cmd>:qa!<cr>", "Quit without saving" },
   },
   s = {
