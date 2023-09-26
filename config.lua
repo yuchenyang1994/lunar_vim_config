@@ -25,11 +25,9 @@ lvim.plugins = {
     end,
   },
   {
-    'phaazon/hop.nvim',
-    name = 'hop',
-    config = function()
-      require('hop').setup()
-    end
+    "folke/flash.nvim",
+    event = "VeryLazy",
+    opts = {},
   },
   {
     "navarasu/onedark.nvim",
@@ -495,10 +493,10 @@ lvim.builtin.which_key.mappings = {
   },
   j = {
     name = "Jump",
-    w = { "<cmd>HopWord<CR>", "Jump World" },
-    l = { "<cmd>HopLine<CR>", "Jump Line" },
-    c = { "<cmd>HopChar1<CR>", "Jump Char1" },
-    C = { "<cmd>HopChar2<CR>", "Jump Char2" },
+    w = { '<cmd>lua require("flash").jump()<CR>', "Jump World" },
+    t = { '<cmd>lua require("flash").treesitter()<CR>', "Jump Treesitter" },
+    s = { '<cmd>lua require("flash").treesitter_search()<CR>', "Treesitter Search" },
+    S = { '<cmd>lua require("flash").toggle()<CR>', "Search" },
   },
   T = {
     name = "Treesitter",
