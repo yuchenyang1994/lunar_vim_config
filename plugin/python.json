@@ -1,0 +1,12 @@
+{
+  "pdb": {
+    "prefix": "pdb",
+    "body": ["import pdb;pdb.settrace()"]
+    "description": "pdb debug"
+  },
+  "ipdb": {
+    "prefix": "ipdb",
+    "body": ["import ipdb;ipdb.settrace()"]
+    "description": "pdb debug"
+  }
+}
