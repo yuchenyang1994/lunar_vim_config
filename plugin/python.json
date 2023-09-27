@@ -6,7 +6,7 @@
   },
   "ipdb": {
     "prefix": "ipdb",
-    "body": ["import ipdb;ipdb.settrace()"]
+    "body": ["import ipdb;pdb.settrace()"]
     "description": "pdb debug"
   }
 }
