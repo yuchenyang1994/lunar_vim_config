@@ -198,17 +198,6 @@ M.plugins = {
     "lommix/godot.nvim"
   },
   {
-    "someone-stole-my-name/yaml-companion.nvim",
-    dependencies = {
-      { "neovim/nvim-lspconfig" },
-      { "nvim-lua/plenary.nvim" },
-      { "nvim-telescope/telescope.nvim" },
-    },
-    config = function()
-      require("telescope").load_extension("yaml_schema")
-    end,
-  },
-  {
     "roobert/surround-ui.nvim",
     dependencies = {
       "kylechui/nvim-surround",
@@ -219,8 +208,7 @@ M.plugins = {
         root_key = "S"
       })
     end,
-  }
-
+  },
 }
 
 return M

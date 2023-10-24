@@ -9,7 +9,7 @@ function M.setup()
       command = "prettier",
       extra_args = { "--print-with", "100" },
       filetypes = { "typescript", "markdown", "javascript", "typescriptreact", "javascriptreact", "json", "yaml", "http",
-        "vue" }
+        "vue", "html", "jinja2" }
     },
   }
 end

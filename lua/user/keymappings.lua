@@ -174,7 +174,7 @@ M.nmappings = {
   o = {
     name = "Open",
     e = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
-    l = { "<cmd>SymbolsOutline<CR>", "Outline" },
+    l = { "<cmd>SymbolsOutline<CR>", "SymbolsOutline" },
     t = {
       name = "Terminal",
       t = { "<cmd>ToggleTerm direction=horizontal<CR>", "Open Terminal(horizontal)" },
