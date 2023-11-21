@@ -1,5 +1,13 @@
 local M = {}
 
+local function tabnine_build_path()
+  if vim.loop.os_uname().sysname == "Windows_NT" then
+    return "pwsh.exe -file .\\dl_binaries.ps1"
+  else
+    return "./dl_binaries.sh"
+  end
+end
+
 M.plugins = {
   {
     "TimUntersberger/neogit",
@@ -47,21 +55,6 @@ M.plugins = {
   },
   {
     "EdenEast/nightfox.nvim"
-  },
-  {
-    "tzachar/cmp-tabnine",
-    build = "./install.sh",
-    dependencies = "hrsh7th/nvim-cmp",
-    config = function()
-      local tabnine = require "cmp_tabnine.config"
-      tabnine:setup {
-        max_lines = 1000,
-        max_num_results = 10,
-        sort = true,
-      }
-    end,
-    lazy = true,
-    event = "InsertEnter",
   },
   {
     "windwp/nvim-ts-autotag",
