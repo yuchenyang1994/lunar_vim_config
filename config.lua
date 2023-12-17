@@ -112,7 +112,6 @@ require "user.linter".setup()
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
 lvim.lsp.installer.setup.ensure_installed = {
-     "sumeko_lua",
      "jsonls",
      "html"
 }
