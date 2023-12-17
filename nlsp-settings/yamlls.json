@@ -1,5 +1,11 @@
 {
   "yaml.schemas": {
-    "kubernetes": "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.22.1-standalone/all.json"
+    "kubernetes": "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.22.1-standalone/all.json",
+    ["https://json.schemastore.org/github-workflow.json"]: "/.github/workflows/*",
+    "https://json.schemastore.org/chart.json": [
+      "/helm/template/*.yaml",
+      "*/template/*.yaml"
+    ]
+    
   }
 }
