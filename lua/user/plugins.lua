@@ -202,6 +202,9 @@ M.plugins = {
       })
     end,
   },
+  {
+    "b0o/schemastore.nvim"
+  }
 }
 
 return M

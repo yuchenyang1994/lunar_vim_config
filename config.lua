@@ -23,7 +23,7 @@ require("lvim.lsp.manager").setup("html", opts)
 lvim.plugins = plugins.plugins
 -- general
 lvim.log.level = "warn"
-lvim.format_on_save = false
+lvim.format_on_save = true
 lvim.colorscheme = "nordfox"
 lvim.transparent_window = true
 -- to disable icons and use a minimalist setup, uncomment the following
@@ -112,8 +112,8 @@ require "user.linter".setup()
 
 -- -- make sure server will always be installed even if the server is in skipped_servers list
 lvim.lsp.installer.setup.ensure_installed = {
-     "jsonls",
-     "html"
+  "jsonls",
+  "html"
 }
 -- -- change UI setting of `LspInstallInfo`
 -- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
