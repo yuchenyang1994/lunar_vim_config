@@ -204,6 +204,18 @@ M.plugins = {
   },
   {
     "b0o/schemastore.nvim"
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+  },
+  {
+    "cuducos/yaml.nvim",
+    ft = { "yaml" }, -- optional
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim", -- optional
+    },
   }
 }
 
