@@ -15,7 +15,3 @@ local opts = {
 
 
 require("lvim.lsp.manager").setup("yaml", opts)
-require("lvim.lsp.manager").setup("helm_ls", {
-  filetypes = { "yaml" },
-  cmd = { "helm_ls", "serve" },
-})
