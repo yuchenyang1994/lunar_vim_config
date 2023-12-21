@@ -11,7 +11,7 @@ local which_key = require("which-key")
 vim.opt_local.shiftwidth = 4
 vim.opt_local.softtabstop = 4
 vim.opt_local.ts = 4
-vim.opt_local.expandtab = true
+vim.opt_local.expandtab = false
 vim.opt_local.autoindent = true
 
 formatters.setup {
@@ -52,3 +52,5 @@ lvim.builtin.which_key.mappings["m"] = {
 }
 
 which_key.register(lvim.builtin.which_key.mappings, lvim.builtin.which_key.opts)
+
+require("lvim.lsp.manager").setup("gdscript", {})
